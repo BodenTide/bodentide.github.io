@@ -1,40 +1,54 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>居中按钮</title>
-    <style>
-        /* 设置页面背景和居中的布局 */
-        body {
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0;
-            background-color: #f0f0f0;
-        }
-        
-        /* 按钮样式 */
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        
-        button:hover {
-            background-color: #45a049;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>打开 App</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: #f9f9f9;
+    font-family: sans-serif;
+  }
+  button {
+    padding: 14px 24px;
+    font-size: 16px;
+    background: #007aff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+</style>
+<script>
+function openApp() {
+  const appLinkUrl = "https://bodentide.github.io/launch/app"; // 你的深链
+  const downloadUrl = "https://play.google.com/store/apps/details?id=com.firebot.business.firebot_business"; // 回退地址
+
+  const start = Date.now();
+
+  // 尝试唤起 App（App Link 会直接走系统验证）
+  window.location.href = appLinkUrl;
+
+  // 延时判断是否唤起失败
+  setTimeout(function () {
+    const elapsed = Date.now() - start;
+    if (elapsed < 2000) {
+      window.location.href = downloadUrl;
+    }
+  }, 1500);
+}
+
+window.onload = function () {
+  openApp();
+};
+</script>
 </head>
 <body>
-    <div>https://bodentide.github.io</div>
-   <a href="https://bodentide.github.io">
-        <button>点击我</button>
-    </a>
+  <button onclick="openApp()">手动打开 App</button>
 </body>
 </html>
