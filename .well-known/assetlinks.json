@@ -1,5 +1,14 @@
-[{
-  "relation": ["delegate_permission/common.handle_all_urls"],
-  "target" : { "namespace": "android_app", "package_name": "com.firebot.business.firebot_business",
-               "sha256_cert_fingerprints": ["11:B0:9B:25:8A:04:45:A3:A2:A9:54:13:4A:38:9B:4A:C3:72:0F:57:F6:3E:54:6F:8A:F7:48:15:30:F4:D4:F0"] }
-}]
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.firebot.business.firebot_business",
+      "sha256_cert_fingerprints": [
+        "11:B0:9B:25:8A:04:45:A3:A2:A9:54:13:4A:38:9B:4A:C3:72:0F:57:F6:3E:54:6F:8A:F7:48:15:30:F4:D4:F0"
+      ]
+    }
+  }
+]
